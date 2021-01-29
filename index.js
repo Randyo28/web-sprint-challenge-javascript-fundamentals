@@ -59,9 +59,7 @@ const zooAnimals = [
 
   function animalNames(zooAnimals){
     let displayNames = [];
-    zooAnimals.forEach(function(item){
-      return displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`)
-    })
+    zooAnimals.forEach(item => displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`))
     return displayNames;
   }
   
@@ -74,9 +72,7 @@ const zooAnimals = [
   */
 
   function lowerCaseNames(zooAnimals){
-   const mapArray = zooAnimals.map(function(item){
-    return `${item.animal_name}`.toLowerCase()
-   })
+   const mapArray = zooAnimals.map(item => `${item.animal_name}`.toLowerCase())
    return mapArray
   }
   console.log(lowerCaseNames(zooAnimals))
