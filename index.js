@@ -29,15 +29,11 @@ myFunction();
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
 function summation(num) {
-  // let counter = 0;
-  // for(let i = 0; i < num; i++)
-  // return counter[i]++;
-  // let count = 0;
-  // return function counter() {
-  //  return count++;
-  // }
+  let counter = 10;
+  
+  return counter++
   }
- console.log(5)
+ console.log(summation(5))
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -166,7 +162,7 @@ function CuboidMaker(attributes){
   this.length = attributes.length;
   this.width = attributes.width;
   this.height = attributes.height;
-  
+  this.volume = attributes.volume;
 }
 
 
@@ -174,8 +170,9 @@ function CuboidMaker(attributes){
   Create a method called volume using CuboidMaker's prototype that returns the volume of a given cuboid's length, width, and height
   Formula for cuboid volume: length * width * height   */
 
-CuboidMaker.prototype.volume = function(10){
-  return `${this.length} * ${this.width} * ${this.height}`
+CuboidMaker.prototype.volume = function(){
+   return `(${this.length} * ${this.width} * ${this.height})`
+  
 }
 
 
@@ -186,7 +183,7 @@ CuboidMaker.prototype.volume = function(10){
   2 * (length * width + length * height + width * height)  */
 
   CuboidMaker.prototype.surfaceArea = function(){
-    return `2 * (${this.length} * ${this.width} + ${this.length} * ${this.height} + ${this.width} * ${this.height})`
+    return 2 * `(${this.length} * ${this.width} + ${this.length} * ${this.height} + ${this.width} * ${this.height})`
   }
 
 
@@ -201,22 +198,29 @@ const cuboid = new CuboidMaker({
   height: 5,
 })
 
-cuboid.prototype = Object.create(CuboidMaker.prototype)
-
-
-
+  // Cuboid.volume(20,20,20)
 
 
 // 🐴🐴🐴 Test your volume and surfaceArea methods by uncommenting the logs below: 🐴🐴🐴
 // ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️ ⬇️
- console.log(cuboid.volume(100)); // 100
- console.log(cuboid.surfaceArea(130)); // 130
+//  console.log(cuboid.volume()); // 100
+//  console.log(cuboid.surfaceArea()); // 130
  
 
 // 🦄🦄🦄 Topic 4: Classes 🦄🦄🦄 //
 //🦄🦄🦄 1. Take your prototypes from above and refactor into class syntax. Please rename your class CuboidMakerTwo and your object cuboidTwo 🦄🦄🦄
 class CuboidMakerTwo{
-
+  constructor(attributes){
+    this.length = attributes.length;
+    this.width = attributes.width;
+    this.height = attributes.height;
+  }
+  volume(){
+    return `${this.length} * ${this.width} * ${this.height}`
+  }
+  surfaceArea(){
+    return `2 * (${this.length} * ${this.width} + ${this.length} * ${this.height} + ${this.width} * ${this.height})`
+  }
 }
 
 
